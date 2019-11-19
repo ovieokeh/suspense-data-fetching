@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "parcel": "^1.12.4",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.7.2"
   }
 }

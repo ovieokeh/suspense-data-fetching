@@ -1,7 +1,5 @@
 import React, { useState, useTransition, Suspense } from 'react'
-import Todos from './Todos'
-import Todo from './Todo'
-import Loader from './Loader'
+import { Todos, Todo, Loader } from '.'
 import { fetchTodo } from '../api/endpoints'
 
 const initialTodo = fetchTodo(1)
