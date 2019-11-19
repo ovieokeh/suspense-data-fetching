@@ -1,0 +1,32 @@
+{
+  "name": "suspense-data-fetching",
+  "version": "1.0.0",
+  "description": "Data fetching with React Suspense",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel public/index.html -p 4000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovieokeh/suspense-data-fetching.git"
+  },
+  "keywords": [
+    "react",
+    "suspense"
+  ],
+  "author": "Ovie Okeh",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ovieokeh/suspense-data-fetching/issues"
+  },
+  "homepage": "https://github.com/ovieokeh/suspense-data-fetching#readme",
+  "dependencies": {
+    "react": "0.0.0-experimental-b53ea6ca0",
+    "react-dom": "0.0.0-experimental-b53ea6ca0",
+    "react-top-loading-bar": "^1.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.4"
+  }
+}
