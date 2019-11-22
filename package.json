@@ -26,8 +26,9 @@
     "react-top-loading-bar": "^1.2.0"
   },
   "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0",
     "parcel": "^1.12.4",
-    "parcel-bundler": "^1.12.4",
-    "typescript": "^3.7.2"
+    "parcel-bundler": "^1.12.4"
   }
 }

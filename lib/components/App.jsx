@@ -1,31 +1,21 @@
-import React, { useState, useTransition, Suspense } from 'react'
-import { Todos, Todo, Loader } from '.'
-import { fetchTodo } from '../api/endpoints'
-
-const initialTodo = fetchTodo(1)
+import React, { Suspense } from 'react'
+import CompletedTodos from './CompletedTodos'
+import PendingTodos from './PendingTodos'
 
 const App = () => {
-  const [todo, setTodo] = useState(initialTodo)
-  const [startTransition, isPending] = useTransition({ timeoutMs: 2000 })
-
-  const handleTodoClick = (id) => {
-    startTransition(() => {
-      setTodo(fetchTodo(id))
-    })
-  }
-
   return (
     <div className="app">
       <h1>Here are your Todos for today</h1>
       <p>Click on any todo to view more details about it</p>
 
-      <Suspense fallback={<h1>Loading Todos...</h1>}>
-        <Todos onClick={handleTodoClick} />
+      <h3>Pending Todos</h3>
+      <Suspense fallback={<h1>Loading Pending Todos...</h1>}>
+        <PendingTodos />
+      </Suspense>
 
-        {isPending && <Loader />}
-        <Suspense fallback={<h1>Loading Selected Todo</h1>}>
-          <Todo resource={todo} />
-        </Suspense>
+      <h3>Completed Todos</h3>
+      <Suspense fallback={<h1>Loading Completed Todos...</h1>}>
+        <CompletedTodos />
       </Suspense>
     </div>
   )
