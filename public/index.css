@@ -19,24 +19,16 @@ body {
 .app {
   width: 500px;
   margin: 5% auto;
+  padding: 5%;
   background-color: #fff;
   border-radius: 8px;
-  text-align: center;
+  /* text-align: center; */
   overflow: hidden;
-}
-
-.app > h1 {
-  padding: 1rem;
-  margin-bottom: -15px;
 }
 
 h3 {
   border-bottom: 2px solid #e8f5ff;
   padding-bottom: 5px;
-}
-
-.todos {
-  text-align: left;
 }
 
 .todos li {

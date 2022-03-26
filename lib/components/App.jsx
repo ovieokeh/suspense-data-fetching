@@ -9,12 +9,12 @@ const App = () => {
       <p>Click on any todo to view more details about it</p>
 
       <h3>Pending Todos</h3>
-      <Suspense fallback={<h1>Loading Pending Todos...</h1>}>
+      <Suspense fallback={<p>Loading Pending Todos...</p>}>
         <PendingTodos />
       </Suspense>
 
       <h3>Completed Todos</h3>
-      <Suspense fallback={<h1>Loading Completed Todos...</h1>}>
+      <Suspense fallback={<p>Loading Completed Todos...</p>}>
         <CompletedTodos />
       </Suspense>
     </div>
