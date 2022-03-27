@@ -1,7 +1,7 @@
 import React from 'react'
 
 const UserWelcome = ({ user }) => {
-  if (!user.id) return <p>Loading user...</p>
+  if (!user.id) return <p>Loading user details...</p>
 
   return (
     <div>

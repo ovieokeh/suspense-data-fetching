@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Todos = ({ todos }) => {
-  if (!todos.length) return <p>Loading Pending Todos...</p>
+  if (!todos.length) return <p>Loading Todos...</p>
 
   const renderTodos = todos.map((todo) => {
     const className = todo.status === 'Completed' ? 'todo-completed' : 'todo'
