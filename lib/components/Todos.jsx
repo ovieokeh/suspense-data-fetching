@@ -8,7 +8,7 @@ const Todos = () => {
     fetchTodos().then(setTodos)
   }, [])
 
-  if (!todos.length) return <p>Loading Pending Todos...</p>
+  if (!todos.length) return <p>Loading Todos...</p>
 
   const renderTodos = todos.map((todo) => {
     const className = todo.status === 'Completed' ? 'todo-completed' : 'todo'
