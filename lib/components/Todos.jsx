@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import { fetchPendingTodos } from '../api/endpoints'
-import CompletedTodos from './CompletedTodos'
+import React from 'react'
 
-const Todos = () => {
-  const [todos, setTodos] = useState([])
-
-  useEffect(() => {
-    fetchPendingTodos().then(setTodos)
-  }, [])
-
+const Todos = ({ todos }) => {
   if (!todos.length) return <p>Loading Pending Todos...</p>
+
+  const renderTodos = todos.map((todo) => {
+    const className = todo.status === 'Completed' ? 'todo-completed' : 'todo'
+    return (
+      <li className={`todo ${className}`} key={todo.id}>
+        {todo.title}
+      </li>
+    )
+  })
 
   return (
     <div>
-      <h3>Pending Todos</h3>
-      <ol className="todos">
-        {todos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ol>
-      {/* <CompletedTodos /> This makes it's own request too */}
+      <h3>Todos</h3>
+      <ol className="todos">{renderTodos}</ol>
     </div>
   )
 }

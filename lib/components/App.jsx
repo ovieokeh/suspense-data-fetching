@@ -1,30 +1,29 @@
 import React, { useState, useEffect } from 'react'
 
+import UserWelcome from './UserWelcome'
 import Todos from './Todos'
-import { fetchUser } from '../api/endpoints'
+
+import { fetchUserDetailsAndTodos } from '../api/endpoints'
+
+const fetchDataPromise = fetchUserDetailsAndTodos()
 
 const App = () => {
-  const [user, setUser] = useState({})
+  const [userDetails, setUserDetails] = useState({})
+  const [todos, setTodos] = useState([])
 
   useEffect(() => {
-    fetchUser().then(setUser)
+    fetchDataPromise.then((data) => {
+      setUserDetails(data.userDetails)
+      setTodos(data.todos)
+    })
   }, [])
-
-  const content = user.id ? (
-    <>
-      <strong>Welcome {user.name}</strong>
-      <Todos />
-    </>
-  ) : (
-    <p>Fetching user details...</p>
-  )
 
   return (
     <div className="app">
-      <h1>Here are your Todos for today</h1>
-      <p>Click on any todo to view more details about it</p>
+      <h2>Simple Todo</h2>
 
-      {content}
+      <UserWelcome user={userDetails} />
+      <Todos todos={todos} />
     </div>
   )
 }

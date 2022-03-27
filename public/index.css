@@ -27,25 +27,24 @@ body {
 }
 
 h3 {
-  border-bottom: 2px solid #e8f5ff;
   padding-bottom: 5px;
 }
 
-.todos li {
+.todo {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.todos li:hover {
+.todo:hover {
   background-color: #e8f5ff;
 }
 
-.todos.completed li {
+.todo-completed {
   text-decoration: line-through;
 }
 
-.todos.completed li:hover {
+.todo-completed:hover {
   cursor: not-allowed;
   background-color: #e8ffeb;
 }
