@@ -1,22 +1,30 @@
-import React, { Suspense } from 'react'
-import CompletedTodos from './CompletedTodos'
-import PendingTodos from './PendingTodos'
+import React, { useState, useEffect } from 'react'
+
+import Todos from './Todos'
+import { fetchUser } from '../api/endpoints'
 
 const App = () => {
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    fetchUser().then(setUser)
+  }, [])
+
+  const content = user.id ? (
+    <>
+      <strong>Welcome {user.name}</strong>
+      <Todos />
+    </>
+  ) : (
+    <p>Fetching user details...</p>
+  )
+
   return (
     <div className="app">
       <h1>Here are your Todos for today</h1>
       <p>Click on any todo to view more details about it</p>
 
-      <h3>Pending Todos</h3>
-      <Suspense fallback={<p>Loading Pending Todos...</p>}>
-        <PendingTodos />
-      </Suspense>
-
-      <h3>Completed Todos</h3>
-      <Suspense fallback={<p>Loading Completed Todos...</p>}>
-        <CompletedTodos />
-      </Suspense>
+      {content}
     </div>
   )
 }
