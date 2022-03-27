@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { fetchTodos } from '../api/endpoints'
 
-const Todos = ({ todos }) => {
+const Todos = () => {
+  const [todos, setTodos] = useState([])
+
+  useEffect(() => {
+    fetchTodos().then(setTodos)
+  }, [])
+
   if (!todos.length) return <p>Loading Pending Todos...</p>
 
   const renderTodos = todos.map((todo) => {
