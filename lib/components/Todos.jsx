@@ -1,7 +1,12 @@
 import React from 'react'
+import fetchData from '../api/fetchData'
 
-const Todos = ({ todos }) => {
-  if (!todos.length) return <p>Loading Todos...</p>
+const resource = fetchData(
+  'https://run.mocky.io/v3/8a33e687-bc2f-41ea-b23d-3bc2fb452ead'
+)
+
+const Todos = () => {
+  const todos = resource.read()
 
   const renderTodos = todos.map((todo) => {
     const className = todo.status === 'Completed' ? 'todo-completed' : 'todo'

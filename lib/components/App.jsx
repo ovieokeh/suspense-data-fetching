@@ -1,29 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { Suspense } from 'react'
 
 import UserWelcome from './UserWelcome'
 import Todos from './Todos'
 
-import { fetchUserDetailsAndTodos } from '../api/endpoints'
-
-const fetchDataPromise = fetchUserDetailsAndTodos()
-
 const App = () => {
-  const [userDetails, setUserDetails] = useState({})
-  const [todos, setTodos] = useState([])
-
-  useEffect(() => {
-    fetchDataPromise.then((data) => {
-      setUserDetails(data.userDetails)
-      setTodos(data.todos)
-    })
-  }, [])
-
   return (
     <div className="app">
       <h2>Simple Todo</h2>
 
-      <UserWelcome user={userDetails} />
-      <Todos todos={todos} />
+      <Suspense fallback={<p>Loading user details...</p>}>
+        <UserWelcome />
+      </Suspense>
+
+      <Suspense fallback={<p>Loading Todos...</p>}>
+        <Todos />
+      </Suspense>
     </div>
   )
 }

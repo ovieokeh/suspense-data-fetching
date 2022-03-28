@@ -48,3 +48,7 @@ h3 {
   cursor: not-allowed;
   background-color: #e8ffeb;
 }
+
+.user-name {
+  color: blue;
+}

@@ -21,17 +21,13 @@
   },
   "homepage": "https://github.com/ovieokeh/suspense-data-fetching#readme",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
-    "react": "0.0.0-experimental-b53ea6ca0",
-    "react-dom": "0.0.0-experimental-b53ea6ca0",
-    "react-top-loading-bar": "^1.2.0"
+    "react": "^18.0.0-rc.3",
+    "react-dom": "^18.0.0-rc.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/plugin-transform-runtime": "^7.17.0",
     "eslint": "^6.6.0",
     "eslint-plugin-react": "^7.16.0",
-    "parcel": "^1.12.4",
-    "parcel-bundler": "^1.12.4"
+    "parcel": "^2.4.0",
+    "parcel-bundler": "^1.12.5"
   }
 }
